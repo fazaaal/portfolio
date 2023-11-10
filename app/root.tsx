@@ -24,13 +24,18 @@ export default function App() {
         <Meta />
         <Links />
       </head>
-      <body className="text-white">
+      <body className=" sm:mx-32">
         <Navbar />
         <Outlet />
         <ScrollRestoration />
         <Scripts />
         <LiveReload />
       </body>
+      <footer className="footer footer-center p-4 bg-base-300 ">
+        <aside>
+          <p>Copyright © 2023</p>
+        </aside>
+      </footer>
     </html>
   );
 }
