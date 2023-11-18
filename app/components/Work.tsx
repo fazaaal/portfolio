@@ -74,13 +74,17 @@ export default function Work() {
                 </div>
               )}
             </time>
-            <h3 className="text-lg font-semibold  ">
+            <p className="mb-1 text-lg font-bold leading-none text-[#315155]">
+              {ExpItem.attributes.company}
+            </p>
+            <h3 className="text-lg font-semibold pb-2">
               {ExpItem.attributes.Title}
             </h3>
-            <p className="mb-4 text-base font-normal">
-              Get access to over 20+ pages including a dashboard layout, charts,
-              kanban board, calendar, and pre-order E-commerce & Marketing
-              pages.
+            <p
+              className="mb-4 text-base font-normal"
+              style={{ whiteSpace: 'pre-line' }}
+            >
+              {ExpItem.attributes.description}
             </p>
             <a
               href="/"
