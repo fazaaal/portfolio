@@ -1,19 +1,40 @@
 export default function Education() {
   const Edu = [
     {
-      id: 1,
-      title: 'GCE O Level',
-      text: 'Get access to over 20+ pages including a dashboard layout, charts, kanban board, calendar, and pre-order E-commerce & Marketing pages.',
+      id: 3,
+      attributes: {
+        title: 'Bsc (Hons) Computer Science',
+        description: null,
+        institute: 'UWE - Villa College',
+        createdAt: '2023-10-22T18:35:34.491Z',
+        updatedAt: '2023-10-22T18:37:10.860Z',
+        publishedAt: '2023-10-22T18:37:10.856Z',
+        dateCompleted: '2019-08-01',
+      },
     },
     {
       id: 2,
-      title: 'Certificate 4 in IT',
-      text: 'Get access to over 20+ pages including a dashboard layout, charts, kanban board, calendar, and pre-order E-commerce & Marketing pages.',
+      attributes: {
+        title: 'Certificate 4 in Information Technology ',
+        description: null,
+        institute: 'Villa College',
+        createdAt: '2023-10-22T18:34:14.184Z',
+        updatedAt: '2023-10-22T18:37:32.766Z',
+        publishedAt: '2023-10-22T18:38:05.469Z',
+        dateCompleted: '2016-12-31',
+      },
     },
     {
-      id: 3,
-      title: 'BSc Hons in Computer Science',
-      text: 'Get access to over 20+ pages including a dashboard layout, charts, kanban board, calendar, and pre-order E-commerce & Marketing pages.',
+      id: 1,
+      attributes: {
+        title: 'GCE O Level and SSC',
+        description: null,
+        institute: 'Majeediyyaa School',
+        createdAt: '2023-10-22T18:33:02.127Z',
+        updatedAt: '2023-10-22T18:37:55.505Z',
+        publishedAt: '2023-10-22T18:38:05.469Z',
+        dateCompleted: '2015-12-31',
+      },
     },
   ];
   return (
@@ -29,13 +50,16 @@ export default function Education() {
           >
             <div className="absolute w-3 h-3 bg-gray-200 rounded-full mt-1.5 -left-1.5 border border-white "></div>
             <time className="mb-1 text-sm font-normal leading-none text-[#315155]">
-              February 2022
+              {EduItem.attributes.dateCompleted}
             </time>
-            <h3 className="text-lg font-semibold  ">{EduItem.title}</h3>
+            <p className="mb-1 text-lg font-bold leading-none text-[#315155]">
+              {EduItem.attributes.institute}
+            </p>
+            <h3 className="text-lg font-semibold  ">
+              {EduItem.attributes.title}
+            </h3>
             <p className="mb-4 text-base font-normal">
-              Get access to over 20+ pages including a dashboard layout, charts,
-              kanban board, calendar, and pre-order E-commerce & Marketing
-              pages.
+              {EduItem.attributes.description}
             </p>
             <a
               href="/"
