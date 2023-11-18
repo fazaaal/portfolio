@@ -2,38 +2,23 @@ import { Link } from '@remix-run/react';
 import Skills from './Skills';
 import Hero from './Hero';
 import Education from './Education';
+import { useState } from 'react';
 
-export default function Navbar() {
+export default function Navbar({ children }: any) {
   const Nav = [
     { id: 1, title: 'Home', url: '/' },
     { id: 2, title: 'About', url: '#about' },
     { id: 3, title: 'Contact', url: '#contact' },
+    { id: 3, title: 'Skills', url: '#skills' },
   ];
+  const [isMenuOpen, setMenuOpen] = useState(false);
+
+  const toggleMenu = () => {
+    setMenuOpen(!isMenuOpen);
+  };
   return (
-    // <div>
-    //   <div className="bg-black border-b-[1px] py-3 grid grid-cols-1 ">
-    //     <div className=" border-gray-800 text-gray-300  flex flex-row justify-center transition-all">
-    //       {Nav.map((NavItem) => (
-    //         <NavLink
-    //           key={NavItem.id}
-    //           className={({ isActive, isPending }) =>
-    //             isActive
-    //               ? 'flex flex-row px-4 py-1 mx-2  transition-all rounded-2xl font-normal text-white bg-gray-900'
-    //               : 'flex flex-row px-4 py-1 mx-2 hover:text-white transition-all rounded-2xl font-normal text-slate-400 hover:bg-gray-900'
-    //           }
-    //           // className="flex flex-row px-4 py-2 mx-2 hover:text-white transition-all rounded-md font-semibold"
-    //           to={NavItem.url}
-    //         >
-    //           {NavItem.title}
-    //         </NavLink>
-    //       ))}
-    //     </div>
-    //   </div>
-    //   <div className="bg-black border-b-[1px] py-3 grid grid-cols-1 sm:hidden">
-    //     sup
-    //   </div>
-    // </div>
-    <div className="drawer">
+    // d
+    <div className="drawer text-2xl">
       <input
         id="my-drawer-3"
         type="checkbox"
@@ -70,7 +55,7 @@ export default function Navbar() {
               {Nav.map((NavItem) => (
                 <Link
                   key={NavItem.id}
-                  className="hover:text-[#64ffda] text-slate-500 mx-2 transition-all"
+                  className="hover:text-[#378a77] hover:drop-shadow-2xl text-slate-500 mx-2 transition-all text-2xl"
                   // className="flex flex-row px-4 py-2 mx-2 hover:text-white transition-all rounded-md font-semibold"
                   to={NavItem.url}
                 >
@@ -81,9 +66,7 @@ export default function Navbar() {
           </div>
         </div>
         {/* Page content here */}
-        <Hero />
-        <Education />
-        <Skills />
+        {children}
       </div>
       <div className="drawer-side h-full">
         <label
@@ -106,5 +89,38 @@ export default function Navbar() {
         </ul>
       </div>
     </div>
+    // <>
+    //   <div className="navbar bg-slate-500">
+    //     <div className="navbar-start text-2xl">Ahmed Fazal</div>
+    //     <div className="navbar-end">
+    //       {/* Hamburger icon for small screens */}
+    //       <div className="block lg:hidden">
+    //         <button
+    //           onClick={toggleMenu}
+    //           className="text-white hover:text-[#64ffda] focus:outline-none"
+    //         >
+    //           ☰
+    //         </button>
+    //       </div>
+
+    //       {/* Nav links */}
+    //       <div
+    //         className={`${
+    //           isMenuOpen ? 'block' : 'hidden'
+    //         } lg:flex lg:items-center lg:w-auto`}
+    //       >
+    //         {Nav.map((NavItem) => (
+    //           <a
+    //             key={NavItem.id}
+    //             className="hover:text-[#64ffda] text-slate-500 mx-2 transition-all text-2xl py-3 bg-slate-300 rounded-md px-3 my-1 "
+    //             href={NavItem.url}
+    //           >
+    //             {NavItem.title}
+    //           </a>
+    //         ))}
+    //       </div>
+    //     </div>
+    //   </div>
+    // </>
   );
 }

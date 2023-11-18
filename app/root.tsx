@@ -10,6 +10,10 @@ import {
   ScrollRestoration,
 } from '@remix-run/react';
 import Navbar from './components/NavBar';
+import Hero from './components/Hero';
+import Skills from './components/Skills';
+import Education from './components/Education';
+import Work from './components/Work';
 
 export const links: LinksFunction = () => [
   { rel: 'stylesheet', href: stylesheet },
@@ -25,7 +29,12 @@ export default function App() {
         <Links />
       </head>
       <body className=" sm:mx-32">
-        <Navbar />
+        <Navbar>
+          <Hero />
+          <Skills />
+          <Education />
+          <Work />
+        </Navbar>
         <Outlet />
         <ScrollRestoration />
         <Scripts />
