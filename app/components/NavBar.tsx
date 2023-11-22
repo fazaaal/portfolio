@@ -18,15 +18,15 @@ export default function Navbar({ children }: any) {
   };
   return (
     // d
-    <div className="drawer text-2xl">
+    <div className="drawer text-2xl  min-w-full mx-auto container z-40">
       <input
         id="my-drawer-3"
         type="checkbox"
         className="drawer-toggle drawer-overlay"
       />
-      <div className="drawer-content flex flex-col">
+      <div className="drawer-content flex flex-col fixed w-full">
         {/* Navbar */}
-        <div className="w-full navbar bg-base-300">
+        <div className="w-full navbar bg-white drop-shadow-lg">
           <div className="flex-none lg:hidden">
             <label
               htmlFor="my-drawer-3"
@@ -66,7 +66,7 @@ export default function Navbar({ children }: any) {
           </div>
         </div>
         {/* Page content here */}
-        {children}
+        {/* {children} */}
       </div>
       <div className="drawer-side h-full">
         <label

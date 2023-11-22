@@ -28,23 +28,24 @@ export default function App() {
         <Meta />
         <Links />
       </head>
-      <body className=" sm:mx-32">
-        <Navbar>
+      <body className="">
+        <Navbar />
+        <div className="h-[75%] overflow-y-auto">
           <Hero />
           <Skills />
           <Education />
           <Work />
-        </Navbar>
+          <footer className="footer footer-center p-4 bg-base-300 ">
+            <aside>
+              <p>Copyright © 2023</p>
+            </aside>
+          </footer>
+        </div>
         <Outlet />
         <ScrollRestoration />
         <Scripts />
         <LiveReload />
       </body>
-      <footer className="footer footer-center p-4 bg-base-300 ">
-        <aside>
-          <p>Copyright © 2023</p>
-        </aside>
-      </footer>
     </html>
   );
 }
