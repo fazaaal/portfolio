@@ -1,4 +1,4 @@
-export default function Hero() {
+export default function Hero({ aboutme }) {
   return (
     <>
       <div className="hero min-h-screen">
@@ -7,7 +7,7 @@ export default function Hero() {
           <div className="">
             <h1 className="mb-5 text-5xl font-bold text-left">Hello</h1>
             <p className="mb-5 text-5xl text-center font-bold text-cyan-900 ">
-              I'm Fazal
+              I'm {aboutme.name}
             </p>
             {/* <button className="btn btn-primary">Get Started</button> */}
           </div>

@@ -1,6 +1,6 @@
 import { cssBundleHref } from '@remix-run/css-bundle';
 import stylesheet from './tailwind.css';
-import type { LinksFunction } from '@remix-run/node';
+import { json, type LinksFunction } from '@remix-run/node';
 import {
   Links,
   LiveReload,
@@ -8,18 +8,24 @@ import {
   Outlet,
   Scripts,
   ScrollRestoration,
+  useLoaderData,
 } from '@remix-run/react';
 import Navbar from './components/NavBar';
 import Hero from './components/Hero';
 import Skills from './components/Skills';
 import Education from './components/Education';
 import Work from './components/Work';
+import { checkEnvVars, checkStatus } from './utils/errorHandling';
+import { fetchData, getData } from './data/strapi.server';
 
 export const links: LinksFunction = () => [
   { rel: 'stylesheet', href: stylesheet },
 ];
 
 export default function App() {
+  const aboutme: any = useLoaderData<typeof loader>().aboutMeData;
+  const Skill = useLoaderData<typeof loader>().skillsData;
+  console.log(Skill);
   return (
     <html lang="en">
       <head>
@@ -31,8 +37,8 @@ export default function App() {
       <body className="">
         <Navbar />
         <div className="h-[75%] overflow-y-auto">
-          <Hero />
-          <Skills />
+          <Hero aboutme={aboutme} />
+          <Skills Skill={Skill} />
           <Education />
           <Work />
           <footer className="footer footer-center p-4 bg-base-300 ">
@@ -48,4 +54,8 @@ export default function App() {
       </body>
     </html>
   );
+}
+
+export async function loader() {
+  return fetchData();
 }
