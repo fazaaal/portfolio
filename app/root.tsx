@@ -23,9 +23,10 @@ export const links: LinksFunction = () => [
 ];
 
 export default function App() {
-  const aboutme: any = useLoaderData<typeof loader>().aboutMeData;
-  const Skill = useLoaderData<typeof loader>().skillsData;
-  console.log(Skill);
+  const aboutme: any = useLoaderData<typeof loader>().aboutme;
+  const skills = useLoaderData<typeof loader>().skills;
+  const edu = useLoaderData<typeof loader>().education;
+  const exp = useLoaderData<typeof loader>().experiences;
   return (
     <html lang="en">
       <head>
@@ -38,9 +39,9 @@ export default function App() {
         <Navbar />
         <div className="h-[75%] overflow-y-auto">
           <Hero aboutme={aboutme} />
-          <Skills Skill={Skill} />
-          <Education />
-          <Work />
+          <Skills skills={skills} />
+          <Education education={edu} />
+          <Work experiences={exp} />
           <footer className="footer footer-center p-4 bg-base-300 ">
             <aside>
               <p>Copyright © 2023</p>

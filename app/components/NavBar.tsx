@@ -9,7 +9,7 @@ export default function Navbar({ children }: any) {
     { id: 1, title: 'Home', url: '/' },
     { id: 2, title: 'About', url: '#about' },
     { id: 3, title: 'Contact', url: '#contact' },
-    { id: 3, title: 'Skills', url: '#skills' },
+    { id: 4, title: 'Skills', url: '#skills' },
   ];
   const [isMenuOpen, setMenuOpen] = useState(false);
 
