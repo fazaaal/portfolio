@@ -158,9 +158,9 @@ export async function getWork() {
         };
       }) => {
         const id = item.id;
-        const { title, description, fromDate, toDate, company, isCurrent } =
+        const { Title, description, fromDate, toDate, company, isCurrent } =
           item.attributes;
-        return { id, title, description, fromDate, toDate, company, isCurrent };
+        return { id, Title, description, fromDate, toDate, company, isCurrent };
       }
     );
 
