@@ -7,6 +7,4 @@ export const meta: MetaFunction = () => {
   ];
 };
 
-export default function Index() {
-  // const aboutme = useLoaderData<typeof loader>();
-}
+export default function Index() {}
